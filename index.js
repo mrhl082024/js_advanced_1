@@ -1,6 +1,8 @@
 
-let cube = document.querySelector(".cube");
-let moveBy = 10;
+const container = document.getElementById("container")
+let cube = document.getElementById("cube");
+let moveBy = 20;
+
 
 
 window.addEventListener("load", () => {
@@ -8,6 +10,38 @@ window.addEventListener("load", () => {
     cube.style.left = 0;
     cube.style.top = 0;
 });
+
+
+
+// let moveLeft = false;
+// let moveRight = false;
+// let moveUp = false;
+// let moveDown = false;
+// window.addEventListener("keydown", (e) => {
+//     switch(e.key){
+//         case "ArrowUp":
+//             moveUp = true;
+//             console.log("up");
+            
+//             break;
+//         case "ArrowDown":
+//             moveDown = true;
+//             console.log("down");
+//             break;
+//         case "ArrowLeft":
+//             moveLeft = true;
+//             console.log("left");
+//             break;
+//         case "ArrowRight":
+//             moveRight = true;
+//             console.log("right");
+//             break;    
+//     }
+// });
+
+
+
+
 
 
 window.addEventListener("keydown", (e) => {
@@ -40,12 +74,14 @@ function mouseCordinates(e) {
 
 
 window.addEventListener("mousedown", (e) => {
+    
+    // console.log("museklikk");
+
     cube.style.position = "absolute";
     let x = e.clientX;
     let y = e.clientY;
-    cube.style.left = parseInt(x);
-    cube.style.top = parseInt(y)
-    console.log("heisann");
+    cube.style.left = parseInt(x) - 25 + "px";
+    cube.style.top = parseInt(y) - 25 + "px"
     
 })
 
