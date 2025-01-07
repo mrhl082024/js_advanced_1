@@ -13,37 +13,6 @@ window.addEventListener("load", () => {
 
 
 
-// let moveLeft = false;
-// let moveRight = false;
-// let moveUp = false;
-// let moveDown = false;
-// window.addEventListener("keydown", (e) => {
-//     switch(e.key){
-//         case "ArrowUp":
-//             moveUp = true;
-//             console.log("up");
-            
-//             break;
-//         case "ArrowDown":
-//             moveDown = true;
-//             console.log("down");
-//             break;
-//         case "ArrowLeft":
-//             moveLeft = true;
-//             console.log("left");
-//             break;
-//         case "ArrowRight":
-//             moveRight = true;
-//             console.log("right");
-//             break;    
-//     }
-// });
-
-
-
-
-
-
 window.addEventListener("keydown", (e) => {
     switch(e.key) {
         /*bruker switch case for de forksjellige piltast
@@ -63,13 +32,6 @@ window.addEventListener("keydown", (e) => {
     }
 
 })
-
-function mouseCordinates(e) {
-    let x = e.clientX;
-    let y = e.clientY;
-    document.getElementById("X").value = x;
-    document.getElementById("Y").value = y;
-}
 
 
 
