@@ -1,9 +1,9 @@
 
 const container = document.getElementById("container")
-let cube = document.getElementById("cube");
+const cube = document.getElementById("cube");
+
+
 let moveBy = 20;
-
-
 
 window.addEventListener("load", () => {
     cube.style.position = "absolute";
@@ -30,7 +30,6 @@ window.addEventListener("keydown", (e) => {
             cube.style.top = parseInt(cube.style.top) + moveBy + "px";
             break;
     }
-
 })
 
 
@@ -39,12 +38,11 @@ window.addEventListener("mousedown", (e) => {
     
     // console.log("museklikk");
 
-    cube.style.position = "absolute";
-    let x = e.clientX;
-    let y = e.clientY;
+    const x = e.clientX;
+    const y = e.clientY;
     cube.style.left = parseInt(x) - 25 + "px";
     cube.style.top = parseInt(y) - 25 + "px"
-    
 })
+
 
 
