@@ -1,9 +1,7 @@
 
 const container = document.getElementById("container")
 const cube = document.getElementById("cube");
-
-
-let moveBy = 20;
+const moveBy = 50;
 
 window.addEventListener("load", () => {
     cube.style.position = "absolute";
@@ -12,22 +10,41 @@ window.addEventListener("load", () => {
 });
 
 
+maxY = 450;
+maxX = 450;
+
 
 window.addEventListener("keydown", (e) => {
+
+
+    const cubeX = parseInt(cube.style.left)
+    const cubeY = parseInt(cube.style.top)
+        
+
     switch(e.key) {
-        /*bruker switch case for de forksjellige piltast
-        retningene eg vil bevege cube.*/
+       
         case "ArrowLeft":
-            cube.style.left = parseInt(cube.style.left) - moveBy + "px";
+            if(cubeX <= 0) break;
+            cube.style.left = cubeX - moveBy + "px";
+            console.log("Left");
             break;
+        
         case "ArrowRight":
-            cube.style.left = parseInt(cube.style.left) + moveBy + "px";
+            if(cubeX >= maxX) break;
+            cube.style.left = cubeX + moveBy + "px";
+            console.log("Right");
             break;
+
         case "ArrowUp":
-            cube.style.top = parseInt(cube.style.top) - moveBy + "px";
+            if(cubeY <= 0) break;
+            cube.style.top = cubeY - moveBy + "px";
+            console.log("Up");
             break;
+
          case "ArrowDown":
-            cube.style.top = parseInt(cube.style.top) + moveBy + "px";
+            if(cubeY >= maxY) break;
+            cube.style.top = cubeY + moveBy + "px";
+            console.log("Down");
             break;
     }
 })
@@ -35,8 +52,6 @@ window.addEventListener("keydown", (e) => {
 
 
 window.addEventListener("mousedown", (e) => {
-    
-    // console.log("museklikk");
 
     const x = e.clientX;
     const y = e.clientY;
