@@ -12,6 +12,8 @@ window.addEventListener("load", () => {
 const maxY = 450;
 const maxX = 450;
 
+
+
 window.addEventListener("keydown", (e) => {
     
     const rect = cube.getBoundingClientRect();
@@ -56,22 +58,30 @@ window.addEventListener("keydown", (e) => {
     }
 })
 
+
+
 window.addEventListener("mousedown", (e) => {
 
     const mouseX = e.clientX;
     const mouseY = e.clientY;
-    
-    if(mouseX > maxX) {
+
+    /* if (mouseX - 25 <= 0) {
+        cube.style.left = 0 + "px";
+    } */ if (mouseX - 25 >= maxX) {
         cube.style.left = parseInt(maxX) + "px";
     } else { 
-        cube.style.left = parseInt(mouseX) + "px";
+        cube.style.left = parseInt(mouseX) - 25 + "px";
     }
 
-    if(mouseY > maxY) {
+    /* if (mouseY - 25 <= 0) {
+        cube.style.top = 0 + "px";
+    } */ if (mouseY - 25 >= maxY) {
         cube.style.top = parseInt(maxY) + "px";
     } else {
-        cube.style.top = parseInt(mouseY) + "px"
+        cube.style.top = parseInt(mouseY) - 25 + "px"
     }
 })
+
+
 
 /***  FONØYD NO ALEX ?!??!!!  ***/
