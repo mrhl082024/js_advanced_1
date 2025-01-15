@@ -16,33 +16,45 @@ const maxX = 450;
 
 window.addEventListener("keydown", (e) => {
 
-    const cubeX = parseInt(cube.style.left)
-    const cubeY = parseInt(cube.style.top)
+    const rect = cube.getBoundingClientRect();
+    const rectX = rect.left + window.scrollX;
+    const rectY = rect.top + window.scrollY;
+
+    /* const cubeX = parseInt(cube.style.left)
+    const cubeY = parseInt(cube.style.top) */
         
     switch(e.key) {
        
         case "ArrowLeft":
-            if(cubeX <= 0) break;
-            cube.style.left = cubeX - moveBy + "px";
-        
+            if(rectX <= 0) {
+                cube.style.left = 0;
+                break;
+            };
+            cube.style.left = rectX - moveBy + "px";
             break;
         
         case "ArrowRight":
-            if(cubeX >= maxX) break;
-            cube.style.left = cubeX + moveBy + "px";
-         
+            if(rectX >= maxX) {
+                cube.style.left = parseInt(maxX) + "px";
+                break;
+            }
+            cube.style.left = rectX + moveBy + "px";
             break;
 
         case "ArrowUp":
-            if(cubeY <= 0) break;
-            cube.style.top = cubeY - moveBy + "px";
-          
+            if(rectY <= 0) {
+                cube.style.top = 0;
+                break;
+            };
+            cube.style.top = rectY - moveBy + "px";
             break;
 
          case "ArrowDown":
-            if(cubeY >= maxY) break;
-            cube.style.top = cubeY + moveBy + "px";
-            
+            if(rectY >= maxY) {
+                cube.style.top = parseInt(maxY) + "px";
+                break;
+            }
+            cube.style.top = rectY + moveBy + "px";
             break;
     }
 })
@@ -64,10 +76,8 @@ window.addEventListener("mousedown", (e) => {
         cube.style.top = parseInt(mouseY) + "px"
     }
 
-    /* const rect = cube.getBoundingClientRect();
-    const rectX = rect.left + window.scrollX;
-    const rectY = rect.top + window.scrollY;
-     */
+    
+    
 })
 
 /***  FONØYD NO ALEX ?!??!!!  ***/
