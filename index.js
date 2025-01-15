@@ -9,24 +9,21 @@ window.addEventListener("load", () => {
     cube.style.top = 0;
 });
 
-
 const maxY = 450;
 const maxX = 450;
 
-
 window.addEventListener("keydown", (e) => {
-
+    
     const rect = cube.getBoundingClientRect();
     const rectX = rect.left + window.scrollX;
     const rectY = rect.top + window.scrollY;
-
-    /* const cubeX = parseInt(cube.style.left)
-    const cubeY = parseInt(cube.style.top) */
+    const rectRight = rect.right + window.scrollX;
+    const rectBottom = rect.bottom + window.scrollY;
         
     switch(e.key) {
        
         case "ArrowLeft":
-            if(rectX <= 0) {
+            if(rectX - moveBy <= 0) {
                 cube.style.left = 0;
                 break;
             };
@@ -34,7 +31,7 @@ window.addEventListener("keydown", (e) => {
             break;
         
         case "ArrowRight":
-            if(rectX >= maxX) {
+            if(rectRight + moveBy >= maxX) {
                 cube.style.left = parseInt(maxX) + "px";
                 break;
             }
@@ -42,7 +39,7 @@ window.addEventListener("keydown", (e) => {
             break;
 
         case "ArrowUp":
-            if(rectY <= 0) {
+            if(rectY - moveBy <= 0) {
                 cube.style.top = 0;
                 break;
             };
@@ -50,7 +47,7 @@ window.addEventListener("keydown", (e) => {
             break;
 
          case "ArrowDown":
-            if(rectY >= maxY) {
+            if(rectBottom + moveBy >= maxY) {
                 cube.style.top = parseInt(maxY) + "px";
                 break;
             }
@@ -75,9 +72,6 @@ window.addEventListener("mousedown", (e) => {
     } else {
         cube.style.top = parseInt(mouseY) + "px"
     }
-
-    
-    
 })
 
 /***  FONØYD NO ALEX ?!??!!!  ***/
