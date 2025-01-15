@@ -10,54 +10,64 @@ window.addEventListener("load", () => {
 });
 
 
-maxY = 450;
-maxX = 450;
+const maxY = 450;
+const maxX = 450;
 
 
 window.addEventListener("keydown", (e) => {
 
-
     const cubeX = parseInt(cube.style.left)
     const cubeY = parseInt(cube.style.top)
         
-
     switch(e.key) {
        
         case "ArrowLeft":
             if(cubeX <= 0) break;
             cube.style.left = cubeX - moveBy + "px";
-            console.log("Left");
+        
             break;
         
         case "ArrowRight":
             if(cubeX >= maxX) break;
             cube.style.left = cubeX + moveBy + "px";
-            console.log("Right");
+         
             break;
 
         case "ArrowUp":
             if(cubeY <= 0) break;
             cube.style.top = cubeY - moveBy + "px";
-            console.log("Up");
+          
             break;
 
          case "ArrowDown":
             if(cubeY >= maxY) break;
             cube.style.top = cubeY + moveBy + "px";
-            console.log("Down");
+            
             break;
     }
 })
 
-
-
 window.addEventListener("mousedown", (e) => {
 
-    const x = e.clientX;
-    const y = e.clientY;
-    cube.style.left = parseInt(x) - 25 + "px";
-    cube.style.top = parseInt(y) - 25 + "px"
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
+    
+    if(mouseX > maxX) {
+        cube.style.left = parseInt(maxX) + "px";
+    } else { 
+        cube.style.left = parseInt(mouseX) + "px";
+    }
+
+    if(mouseY > maxY) {
+        cube.style.top = parseInt(maxY) + "px";
+    } else {
+        cube.style.top = parseInt(mouseY) + "px"
+    }
+
+    /* const rect = cube.getBoundingClientRect();
+    const rectX = rect.left + window.scrollX;
+    const rectY = rect.top + window.scrollY;
+     */
 })
 
-
-
+/***  FONØYD NO ALEX ?!??!!!  ***/
